@@ -1,12 +1,19 @@
 body {
-    font-family: Arial;
+    font-family: Roboto, Arial, SansSerif;
+    font-weight: 100;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #81909E;
 }
 
 .container {
     background: url('./static-assets/background.png') no-repeat center center;
     background-size: 100%;
     width: 405px;
-    height: 1000px;
+    height: 575px;
 }
 
 .header {
@@ -29,19 +36,87 @@ body {
     color: white;
 }
 
-#back-button-div {
+#back-button-wrapper {
     float: left;
 }
 
 #header-title {
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     vertical-align: middle;
     line-height: 35px;
     display: inline-block;
     margin:0 auto;
+    font-weight: 400;
+}
+
+.hotel-info-container {
+    color: white;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #hilton-logo {
     float: right;
+    padding-top: 3px;
+
+}
+
+#hotel-info-exterior {
+    width: 100%;
+    box-sizing: border-box;
+    border: solid white 5px;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.hotel-info-text {
+    line-height: 1.6;
+    margin-bottom: 12px;
+    font-weight: 300;
+}
+
+#hotel-info-title {
+    font-size: large;
+    font-weight: 400;
+}
+
+#hotel-info-address {
+    color: #A1BED9;
+
+}
+
+.details-container {
+}
+
+.details {
+    width: 100%;
+    padding: 12px 15px;
+    background: linear-gradient(#E8EBEE, #C1CEDB);
+    color: #021325;
+    font-size: large;
+    font-weight: 600;
+}
+
+.details-description {
+    float: left;
+    color: #061729;
+}
+
+.details-pointer {
+    color: #434343;
+    float: right;
+    font-weight: 500;
+}
+
+#details-map {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom: #DCDCDC;
+}
+
+#hotel-info-phone-number {
+    font-size: .9em;
 }

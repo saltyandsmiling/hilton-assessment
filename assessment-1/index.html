@@ -3,17 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Assessment 1</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600">
     <link rel="stylesheet" href="styles.css"></head>
 <body>
 <div class="container">
     <div class="header">
-        <div id="back-button-div"><button id="back-button">< Back</button></div>
+        <div id="back-button-wrapper"><button id="back-button">< Back</button></div>
         <div><img id="hilton-logo"
-                  src="static-assets/HI_mk_logo_hiltonbrandlogo_3-resized-colored.jpg">
+                  src="static-assets/HI_mk_logo_hiltonbrandlogo_3-resized-colored-40.jpg">
         </div>
         <div id="header-title">Hotel Details</div>
     </div>
-
+    <div class="hotel-info-container">
+        <img id="hotel-info-exterior" src="static-assets/hotelexterior.jpg">
+        <div class="hotel-info-text">
+            <div id="hotel-info-title">Hilton Chicago</div>
+            <div>
+                <span id="hotel-info-address">
+                    720 South Michigan Avenue <br />
+                    Chicago, Illinois, 60605 <br />
+                    <a href="1-312-922-4400" id="hotel-info-phone-number">1-312-922-4400</a>
+                </span>
+            </div>
+        </div>
+        <div class="details-container">
+            <button class="details" id="details-map">
+                <span class="details-description">Map</span>
+                <span class="details-pointer"> > </span>
+            </button>
+            <button class="details" id="details-photos">
+                <span class="details-description">Photo gallery</span>
+                <span class="details-pointer"> > </span>
+            </button>
+            <button class="details" id="details-amenities">
+                <span class="details-description">Amenities</span>
+                <span class="details-pointer"> > </span>
+            </button>
+        </div>
+    </div>
 </div>
 
 
