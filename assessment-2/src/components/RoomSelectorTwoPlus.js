@@ -3,35 +3,30 @@ import styled from 'styled-components';
 
 const SelectorOuter = styled.section`
   background-color: ${props => props.ability ? '#DBDBE3' : '#E7E7E7'};
-  border: ${props => props.ability ? 'solid 3px #CDD0DF' : 'none'};
+  border: ${props => props.ability ? 'solid 3px #CDD0DF' : 'solid 3px transparent'};
   display: inline-block;
   box-sizing: border-box;
-  //box-sizing: ${props => props.ability ? 'initial' : 'border-box'}
   float: left;
   width: 100px;
   height: 87px;
-  // width: ${props => props.ability ? '82px' : '100px'}
-  // height: ${props => props.ability ? '70px' : '87px'}
   margin: 3px;
   font-family: Verdana;
   border-radius: 7px;
-  padding: 5px;
+  padding: 3px;
   line-height: 10px;
 `;
 
 const Header = styled.div`
-  line-height: 2em;
   font-weight: ${props => props.ability ? 'normal' : 'bold'};
   font-size: 10px;
-  padding-left: 3px;
 `;
 
 const SelectorInner = styled.section`
   background-color: ${props => props.ability ? 'none' : 'white'};
   font-weight: normal;
   font-size: 9px;
-  height: 58px;
-  padding: 6px 5px;
+  height: 57px;
+  padding: 5px 3px;
   box-sizing: border-box;
 `;
 
