@@ -1,6 +1,26 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
 body {
-    font-family: Roboto, Arial, SansSerif;
+    font-family: Roboto, Arial, sans-serif;
     font-weight: 100;
+    background-color: black;
 }
 
 a {
@@ -13,7 +33,7 @@ a {
     background: url('./static-assets/background.png') no-repeat center center;
     background-size: 100%;
     width: 405px;
-    height: 575px;
+    height: 540px;
 }
 
 .header {
@@ -73,14 +93,15 @@ a {
 }
 
 .hotel-info-text {
-    line-height: 1.6;
-    margin-bottom: 12px;
-    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 1.2em;
+    font-size: .9em;
 }
 
 #hotel-info-title {
     font-size: large;
     font-weight: 400;
+    padding: .1em 0;
 }
 
 #hotel-info-address {
@@ -95,8 +116,9 @@ a {
     width: 100%;
     padding: 12px 15px;
     background: linear-gradient(#E8EBEE, #C1CEDB);
-    color: #021325;
-    font-size: large;
+    color: #021d4f;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
     font-weight: 600;
 }
 
