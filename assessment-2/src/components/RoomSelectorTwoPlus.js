@@ -12,22 +12,25 @@ const SelectorOuter = styled.section`
   margin: 3px;
   font-family: Verdana;
   border-radius: 7px;
-  padding: 3px;
   line-height: 10px;
 `;
 
 const Header = styled.div`
   font-weight: ${props => props.ability ? 'normal' : 'bold'};
+  line-height: 2em;
   font-size: 10px;
+  padding-left: 3px;
 `;
 
 const SelectorInner = styled.section`
   background-color: ${props => props.ability ? 'none' : 'white'};
   font-weight: normal;
   font-size: 9px;
-  height: 57px;
+  height: 60px;
   padding: 5px 3px;
   box-sizing: border-box;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 `;
 
 const SelectorHeading = styled.span`

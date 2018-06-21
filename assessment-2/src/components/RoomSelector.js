@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SelectorOuter = styled.section`
-  background-color: #E7E7E7
+  background-color: #E7E7E7;
+  border: solid 3px transparent;
   display: inline-block;
   box-sizing: border-box;
   float: left;
@@ -11,7 +12,6 @@ const SelectorOuter = styled.section`
   margin: 3px;
   font-family: Verdana;
   border-radius: 7px;
-  padding: 5px;
   line-height: 10px;
 `;
 
@@ -26,9 +26,11 @@ const SelectorInner = styled.section`
   background-color: white;
   font-weight: normal;
   font-size: 9px;
-  height: 58px;
+  height: 60px;
   padding: 6px 5px;
   box-sizing: border-box;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 `;
 
 const SelectorHeading = styled.span`
