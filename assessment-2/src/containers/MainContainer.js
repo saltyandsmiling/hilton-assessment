@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+
 const mapStateToProps = store => ({
   // add pertinent state here
 });
@@ -13,6 +14,7 @@ class MainContainer extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return <div>Hello Something else</div>;
   }
