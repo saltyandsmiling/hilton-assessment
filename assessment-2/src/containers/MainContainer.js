@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import RoomSelector from '../components/RoomSelector'
 
 
 const mapStateToProps = store => ({
@@ -16,7 +17,7 @@ class MainContainer extends Component {
   }
 
   render() {
-    return <div>Hello Something else</div>;
+    return <RoomSelector />;
   }
 }
 
