@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import RoomSelector from '../components/RoomSelector'
+import RoomSelector from '../components/RoomSelector';
+import RoomSelectorTwoPlus from '../components/RoomSelectorTwoPlus';
+import * as Actions from '../actions/actions';
 
 
 const mapStateToProps = store => ({
-  // add pertinent state here
+  ability: store.reducer.ability,
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  toggleAbility: () => {
+    dispatch(Actions.toggleRoom());
+  },
 });
 
 class MainContainer extends Component {
@@ -17,7 +21,15 @@ class MainContainer extends Component {
   }
 
   render() {
-    return <RoomSelector />;
+    return (
+      <div>
+        <RoomSelector />
+        <RoomSelectorTwoPlus
+          toggleAbility={this.props.toggleAbility}
+          ability={this.props.ability}
+        />
+      </div>
+    );
   }
 }
 

@@ -3,9 +3,12 @@ import styled from 'styled-components';
 
 const SelectorOuter = styled.section`
   background-color: #E7E7E7
+  display: inline-block;
+  box-sizing: border-box;
+  float: left;
   width: 100px;
-  height: 80px;
-  padding: 5px;
+  height: 87px;
+  margin: 3px;
   font-family: Verdana;
   border-radius: 7px;
   padding: 5px;
@@ -23,9 +26,14 @@ const SelectorInner = styled.section`
   background-color: white;
   font-weight: normal;
   font-size: 9px;
-  height: 61px;
+  height: 58px;
   padding: 6px 5px;
   box-sizing: border-box;
+`;
+
+const SelectorHeading = styled.span`
+  margin-bottom: 3px;
+  display: block;
 `;
 
 const AdultsSelector = styled.div`
@@ -46,17 +54,22 @@ const RoomSelector = props => (
       <Header>Room 1</Header>
       <SelectorInner>
         <AdultsSelector>
-          Adults <br />
-          (18+) <br />
+          <SelectorHeading>
+            Adults <br />
+            (18+) <br />
+          </SelectorHeading>
           <select>
             <option value="1">1</option>
             <option value="2">2</option>
           </select>
         </AdultsSelector>
         <ChildrenSelector>
-          Children <br />
-          (0-17) <br />
+          <SelectorHeading>
+            Children <br />
+            (0-17) <br />
+          </SelectorHeading>
           <select>
+            <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
           </select>

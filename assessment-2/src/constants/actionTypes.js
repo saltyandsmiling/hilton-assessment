@@ -1,2 +1,2 @@
 
-export const ADD_TEST = 'ADD_TEST';
+export const TOGGLE_ROOM = 'TOGGLE_ROOM';
