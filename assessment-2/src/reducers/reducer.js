@@ -26,13 +26,13 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+  let ind;
   const stateCopy = { ...state };
   const roomStateCopy = [];
   stateCopy.roomState.forEach((el) => {
     roomStateCopy.push({ ...el });
   });
   stateCopy.roomState = roomStateCopy;
-  let ind;
 
   switch (action.type) {
     case types.TOGGLE_ROOM:
