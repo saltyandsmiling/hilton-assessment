@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import shortid from 'shortid';
 import RoomSelector from '../components/RoomSelector';
 import * as Actions from '../actions/actions';
 
@@ -35,6 +36,7 @@ class MainContainer extends Component {
           toggleAbility={toggleAbility}
           roomState={roomState}
           ind={ind}
+          key={shortid.generate()}
         />
       );
     });
