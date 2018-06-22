@@ -32,17 +32,18 @@ const reducer = (state = initialState, action) => {
     roomStateCopy.push({ ...el });
   });
   stateCopy.roomState = roomStateCopy;
+  let ind;
 
   switch (action.type) {
     case types.TOGGLE_ROOM:
-      const index = action.payload;
-      const boolState = !roomStateCopy[index].ability;
+      ind = action.payload;
+      const boolState = !roomStateCopy[ind].ability;
       if (!boolState) {
-        for (let i = index; i > 0; i -= 1) {
+        for (let i = ind; i > 0; i -= 1) {
           roomStateCopy[i].ability = boolState;
         }
       } else {
-        for (let i = index; i < roomStateCopy.length; i += 1) {
+        for (let i = ind; i < roomStateCopy.length; i += 1) {
           roomStateCopy[i].ability = boolState;
           roomStateCopy[i].adults = 1;
           roomStateCopy[i].children = 0;
@@ -51,7 +52,8 @@ const reducer = (state = initialState, action) => {
       return stateCopy;
 
     case types.HANDLE_CHANGE:
-      const { ind, person, val } = action.payload;
+      ind = action.payload.ind;
+      const { person, val } = action.payload;
       roomStateCopy[ind][person] = val;
       return stateCopy;
 
