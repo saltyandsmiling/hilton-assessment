@@ -51,12 +51,13 @@ const ChildrenSelector = styled.div`
 `;
 
 const RoomSelectorTwo = (props) => {
-  let { ability, toggleAbility, ind } = props;
+  let { handleChange, toggleAbility, roomState, ind } = props;
+  const { ability, adults, children } = roomState;
   return (
     <div>
       <SelectorOuter ability={ability}>
         <Header ability={ability}>
-          <input type="checkbox" id={ind} onClick={() => toggleAbility(ind)} checked={!ability} />
+          <input type="checkbox" onClick={() => toggleAbility(ind)} checked={!ability} />
           Room {ind + 2}
         </Header>
         <SelectorInner ability={ability}>
@@ -65,7 +66,7 @@ const RoomSelectorTwo = (props) => {
               Adults <br />
               (18+) <br />
             </SelectorHeading>
-            <select disabled={ability}>
+            <select disabled={ability} id={`adults ${ind}`} value={adults} onChange={handleChange}>
               <option value="1">1</option>
               <option value="2">2</option>
             </select>
@@ -75,7 +76,7 @@ const RoomSelectorTwo = (props) => {
               Children <br />
               (0-17) <br />
             </SelectorHeading>
-            <select disabled={ability}>
+            <select disabled={ability} id={`children ${ind}`} value={children} onChange={handleChange}>
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -85,7 +86,7 @@ const RoomSelectorTwo = (props) => {
       </SelectorOuter>
     </div>
   );
-}
+};
 
 
 export default RoomSelectorTwo;

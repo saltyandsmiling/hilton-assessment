@@ -6,12 +6,19 @@ import * as Actions from '../actions/actions';
 
 
 const mapStateToProps = store => ({
-  ability: store.reducer.ability,
+  roomState: store.reducer.roomState,
 });
 
 const mapDispatchToProps = dispatch => ({
   toggleAbility: (ind) => {
     dispatch(Actions.toggleRoom(ind));
+  },
+  handleChange: (e) => {
+    const val = e.target.value;
+    const personAndInd = e.target.id.split(' ');
+    const person = personAndInd[0];
+    const ind = personAndInd[1];
+    dispatch(Actions.handleChange(ind, val, person));
   },
 });
 
@@ -21,9 +28,16 @@ class MainContainer extends Component {
   }
 
   render() {
-    const { ability, toggleAbility } = this.props;
-    const roomsTwoToFour = ability.map((room, ind) => {
-      return <RoomSelectorTwoPlus toggleAbility={toggleAbility} ability={ability[ind]} ind={ind} />;
+    const { roomState, toggleAbility, handleChange } = this.props;
+    const roomsTwoToFour = roomState.map((roomState, ind) => {
+      return (
+        <RoomSelectorTwoPlus
+          handleChange={handleChange}
+          toggleAbility={toggleAbility}
+          roomState={roomState}
+          ind={ind}
+        />
+      );
     });
     return (
       <div>

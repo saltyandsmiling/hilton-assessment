@@ -1,29 +1,51 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-  ability: [true, true, true],
+  roomState: [
+    {
+      ability: true,
+      adults: 1,
+      children: 0,
+    },
+    {
+      ability: true,
+      adults: 1,
+      children: 0,
+    },
+    {
+      ability: true,
+      adults: 1,
+      children: 0,
+    },
+  ],
 };
 
 const reducer = (state = initialState, action) => {
   const stateCopy = { ...state };
-  let abilityCopy;
+  const roomStateCopy = [];
+  stateCopy.roomState.forEach((el) => {
+    roomStateCopy.push({ ...el });
+  });
+  stateCopy.roomState = roomStateCopy;
 
   switch (action.type) {
     case types.TOGGLE_ROOM:
-      const ind = action.payload;
-      abilityCopy = state.ability.slice();
-      stateCopy.ability = abilityCopy;
-      const boolState = !abilityCopy[ind];
+      const index = action.payload;
+      const boolState = !roomStateCopy[index].ability;
       if (!boolState) {
-        for (let i = ind; i >= 0; i -= 1) {
-          abilityCopy[i] = boolState;
+        for (let i = index; i >= 0; i -= 1) {
+          roomStateCopy[i].ability = boolState;
         }
       } else {
-        for (let i = ind; i < abilityCopy.length; i += 1) {
-          abilityCopy[i] = boolState;
+        for (let i = index; i < roomStateCopy.length; i += 1) {
+          roomStateCopy[i].ability = boolState;
         }
       }
+      return stateCopy;
 
+    case types.HANDLE_CHANGE:
+      const { ind, person, val } = action.payload;
+      roomStateCopy[ind][person] = val;
       return stateCopy;
 
     default:
