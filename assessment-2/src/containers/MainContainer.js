@@ -10,8 +10,8 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleAbility: () => {
-    dispatch(Actions.toggleRoom());
+  toggleAbility: (ind) => {
+    dispatch(Actions.toggleRoom(ind));
   },
 });
 
@@ -21,13 +21,14 @@ class MainContainer extends Component {
   }
 
   render() {
+    const { ability, toggleAbility } = this.props;
+    const roomsTwoToFour = ability.map((room, ind) => {
+      return <RoomSelectorTwoPlus toggleAbility={toggleAbility} ability={ability[ind]} ind={ind} />;
+    });
     return (
       <div>
         <RoomSelector />
-        <RoomSelectorTwoPlus
-          toggleAbility={this.props.toggleAbility}
-          ability={this.props.ability}
-        />
+        {roomsTwoToFour}
       </div>
     );
   }

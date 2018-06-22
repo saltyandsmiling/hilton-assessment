@@ -50,14 +50,14 @@ const ChildrenSelector = styled.div`
   box-sizing: border-box;
 `;
 
-const RoomSelectorTwo = props => {
-  const { ability } = props;
+const RoomSelectorTwo = (props) => {
+  let { ability, toggleAbility, ind } = props;
   return (
     <div>
       <SelectorOuter ability={ability}>
         <Header ability={ability}>
-          <input type="checkbox" value="2" onClick={() => props.toggleAbility()} />
-          Room 2
+          <input type="checkbox" id={ind} onClick={() => toggleAbility(ind)} checked={!ability} />
+          Room {ind + 2}
         </Header>
         <SelectorInner ability={ability}>
           <AdultsSelector>

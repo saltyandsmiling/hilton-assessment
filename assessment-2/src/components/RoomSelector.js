@@ -27,7 +27,7 @@ const SelectorInner = styled.section`
   font-weight: normal;
   font-size: 9px;
   height: 60px;
-  padding: 6px 5px;
+  padding: 5px 3px;
   box-sizing: border-box;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
