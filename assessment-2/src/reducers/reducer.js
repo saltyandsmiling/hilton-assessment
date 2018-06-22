@@ -17,6 +17,11 @@ const initialState = {
       adults: 1,
       children: 0,
     },
+    {
+      ability: true,
+      adults: 1,
+      children: 0,
+    },
   ],
 };
 
@@ -33,12 +38,14 @@ const reducer = (state = initialState, action) => {
       const index = action.payload;
       const boolState = !roomStateCopy[index].ability;
       if (!boolState) {
-        for (let i = index; i >= 0; i -= 1) {
+        for (let i = index; i > 0; i -= 1) {
           roomStateCopy[i].ability = boolState;
         }
       } else {
         for (let i = index; i < roomStateCopy.length; i += 1) {
           roomStateCopy[i].ability = boolState;
+          roomStateCopy[i].adults = 1;
+          roomStateCopy[i].children = 0;
         }
       }
       return stateCopy;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RoomSelector from '../components/RoomSelector';
-import RoomSelectorTwoPlus from '../components/RoomSelectorTwoPlus';
 import * as Actions from '../actions/actions';
 
 
@@ -31,7 +30,7 @@ class MainContainer extends Component {
     const { roomState, toggleAbility, handleChange } = this.props;
     const roomsTwoToFour = roomState.map((roomState, ind) => {
       return (
-        <RoomSelectorTwoPlus
+        <RoomSelector
           handleChange={handleChange}
           toggleAbility={toggleAbility}
           roomState={roomState}
@@ -41,7 +40,6 @@ class MainContainer extends Component {
     });
     return (
       <div>
-        <RoomSelector />
         {roomsTwoToFour}
       </div>
     );
