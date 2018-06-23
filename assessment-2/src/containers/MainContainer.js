@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import shortid from 'shortid';
+import shortId from 'shortId';
+import PropTypes from 'prop-types';
 import RoomSelector from '../components/RoomSelector';
 import * as Actions from '../actions/actions';
 
@@ -23,23 +24,17 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class MainContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { roomState, toggleAbility, handleChange } = this.props;
-    const roomsTwoToFour = roomState.map((roomState, ind) => {
-      return (
-        <RoomSelector
-          handleChange={handleChange}
-          toggleAbility={toggleAbility}
-          roomState={roomState}
-          ind={ind}
-          key={shortid.generate()}
-        />
-      );
-    });
+    const roomsTwoToFour = roomState.map((roomState, ind) => (
+      <RoomSelector
+        handleChange={handleChange}
+        toggleAbility={toggleAbility}
+        roomState={roomState}
+        ind={ind}
+        key={shortId.generate()}
+      />
+    ));
     return (
       <div>
         {roomsTwoToFour}
@@ -47,5 +42,15 @@ class MainContainer extends Component {
     );
   }
 }
+
+MainContainer.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  toggleAbility: PropTypes.func.isRequired,
+  roomState: PropTypes.arrayOf(PropTypes.shape({
+    ability: PropTypes.bool.isRequired,
+    adults: PropTypes.number.isRequired,
+    children: PropTypes.number.isRequired,
+  })).isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);

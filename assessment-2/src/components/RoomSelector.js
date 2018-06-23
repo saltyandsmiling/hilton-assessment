@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const SelectorOuter = styled.section`
-  background-color: ${props => props.ability ? '#DBDBE3' : '#E7E7E7'};
-  border: ${props => props.ability ? 'solid 3px #CDD0DF' : 'solid 3px transparent'};
+  background-color: ${props => (props.ability ? '#DBDBE3' : '#E7E7E7')};
+  border: ${props => (props.ability ? 'solid 3px #CDD0DF' : 'solid 3px transparent')};
   display: inline-block;
   box-sizing: border-box;
   float: left;
@@ -16,14 +17,14 @@ const SelectorOuter = styled.section`
 `;
 
 const Header = styled.div`
-  font-weight: ${props => props.ability ? 'normal' : 'bold'};
+  font-weight: ${props => (props.ability ? 'normal' : 'bold')};
   line-height: 2em;
   font-size: 10px;
   padding-left: 3px;
 `;
 
 const SelectorInner = styled.section`
-  background-color: ${props => props.ability ? 'none' : 'white'};
+  background-color: ${props => (props.ability ? 'none' : 'white')};
   font-weight: normal;
   font-size: 9px;
   height: 60px;
@@ -52,8 +53,7 @@ const ChildrenSelector = styled.div`
 
 const Checkbox = styled.input`
   position: absolute;
-  opacity: 0;
-  
+  opacity: 0; 
 `;
 
 const CheckBoxContainer = styled.label`
@@ -62,7 +62,7 @@ const CheckBoxContainer = styled.label`
     padding-left: 19px;
 `;
 
-const Checkmark = styled.span`
+const CheckMark = styled.span`
     position: absolute;
     top: 4px;
     left: 2px;
@@ -81,32 +81,33 @@ const Checkmark = styled.span`
       border: solid black;
       border-width: 0 1.5px 1.5px 0;
       transform: rotate(45deg);
-      display: ${props => props.ability ? 'default' : 'block'}
+      display: ${props => (props.ability ? 'default' : 'block')}
     }
 `;
 
 const RoomSelector = (props) => {
   const { handleChange, toggleAbility, roomState, ind } = props;
-  let { ability, adults, children } = roomState;
+  const { adults, children } = roomState;
+  let { ability } = roomState;
   let header;
   if (ind) {
     header = (
       <Header ability={ability}>
         <CheckBoxContainer>Room {ind + 1}
-          <Checkbox type="checkbox" onClick={() => toggleAbility(ind)} checked={!ability} />
-          <Checkmark ability={ability}></Checkmark>
+          <Checkbox type="checkbox" onClick={() => toggleAbility(ind)} checked={!ability} readOnly />
+          <CheckMark ability={ability} />
         </CheckBoxContainer>
       </Header>
     );
   } else {
-    header = <Header ability={!ability}>Room {ind + 1}</Header>
+    header = <Header ability={!ability}>Room {ind + 1}</Header>;
     ability = !ability;
   }
 
   return (
     <div>
       <SelectorOuter ability={ability}>
-          {header}
+        {header}
         <SelectorInner ability={ability}>
           <AdultsSelector>
             <SelectorHeading>
@@ -133,6 +134,17 @@ const RoomSelector = (props) => {
       </SelectorOuter>
     </div>
   );
+};
+
+RoomSelector.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  toggleAbility: PropTypes.func.isRequired,
+  roomState: PropTypes.shape({
+    ability: PropTypes.bool.isRequired,
+    adults: PropTypes.number.isRequired,
+    children: PropTypes.number.isRequired,
+  }).isRequired,
+  ind: PropTypes.number.isRequired,
 };
 
 export default RoomSelector;
