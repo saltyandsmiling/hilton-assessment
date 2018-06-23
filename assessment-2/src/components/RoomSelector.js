@@ -71,13 +71,17 @@ const CheckMark = styled.span`
     height: 11px;
     width: 11px;
     background-color: #FFFFFF;
-    box-shadow: inset .5px .5px 0px 0px #898989;
+    box-sizing: border-box;
+    border-left: solid 1px #8B8D8C;
+    border-top: solid 1px #8B8D8C;
+    border-right: solid 1px #BABABF;
+    border-bottom: solid 1px #BABABF;
+    //box-shadow: inset .5px .5px 0px 0px #8B8D8C;
     &:after {
       content: "";
       position: absolute;
       display: none;
-      left: 4px;
-      top: 1px;
+      left: 3px;
       width: 2px;
       height: 5px;
       border: solid black;
