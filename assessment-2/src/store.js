@@ -11,8 +11,4 @@ const store = createStore(
   persistedState,
 );
 
-store.subscribe(() => {
-  saveState(store.getState());
-});
-
 export default store;

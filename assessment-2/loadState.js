@@ -12,9 +12,9 @@ export const loadState = () => {
 
 export const saveState = (state) => {
   try {
-    const serialzedState = JSON.stringify(state);
-    localStorage.setItem('roomState', serialzedState);
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('roomState', serializedState);
   } catch (err) {
     // Ignore err
   }
-}
+};

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const SelectorOuter = styled.section`
+  color: #4F5055;
   background-color: ${props => (props.ability ? '#DBDBE3' : '#E7E7E7')};
   border: ${props => (props.ability ? 'solid 3px #CDD0DF' : 'solid 3px transparent')};
   display: inline-block;
@@ -18,6 +19,7 @@ const SelectorOuter = styled.section`
 
 const Header = styled.div`
   font-weight: ${props => (props.ability ? 'normal' : 'bold')};
+  color: ${props => (props.ability ? 'inherit' : 'black')};
   line-height: 2em;
   font-size: 10px;
   padding-left: 3px;
@@ -86,7 +88,7 @@ const CheckMark = styled.span`
 `;
 
 const RoomSelector = (props) => {
-  const { handleChange, toggleAbility, roomState, ind } = props;
+  const { handleChange, toggleAbility, persistState, roomState, ind } = props;
   const { adults, children } = roomState;
   let { ability } = roomState;
   let header;
