@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import shortId from 'shortId';
+import shortId from 'shortid';
 import PropTypes from 'prop-types';
 import RoomSelector from '../components/RoomSelector';
 import * as Actions from '../actions/actions';
@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(Actions.toggleRoom(ind));
   },
   handleChange: (e) => {
-    const val = e.target.value;
+    const val = parseInt(e.target.value, 10);
     const personAndInd = e.target.id.split(' ');
     const person = personAndInd[0];
     const ind = personAndInd[1];
@@ -26,7 +26,7 @@ const mapDispatchToProps = dispatch => ({
 class MainContainer extends Component {
   render() {
     const { roomState, toggleAbility, handleChange } = this.props;
-    const roomsTwoToFour = roomState.map((roomState, ind) => (
+    const rooms = roomState.map((roomState, ind) => (
       <RoomSelector
         handleChange={handleChange}
         toggleAbility={toggleAbility}
@@ -35,11 +35,7 @@ class MainContainer extends Component {
         key={shortId.generate()}
       />
     ));
-    return (
-      <div>
-        {roomsTwoToFour}
-      </div>
-    );
+    return <div>{rooms}</div>;
   }
 }
 

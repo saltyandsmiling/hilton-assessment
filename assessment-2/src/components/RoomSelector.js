@@ -8,8 +8,8 @@ const SelectorOuter = styled.section`
   display: inline-block;
   box-sizing: border-box;
   float: left;
-  width: 100px;
-  height: 87px;
+  width: 103px;
+  height: 86px;
   margin: 3px;
   font-family: Verdana;
   border-radius: 7px;
@@ -115,8 +115,8 @@ const RoomSelector = (props) => {
               (18+) <br />
             </SelectorHeading>
             <select disabled={ability} id={`adults ${ind}`} value={adults} onChange={handleChange}>
-              <option value="1">1</option>
-              <option value="2">2</option>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
             </select>
           </AdultsSelector>
           <ChildrenSelector>
@@ -125,9 +125,9 @@ const RoomSelector = (props) => {
               (0-17) <br />
             </SelectorHeading>
             <select disabled={ability} id={`children ${ind}`} value={children} onChange={handleChange}>
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
+              <option value={0}>0</option>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
             </select>
           </ChildrenSelector>
         </SelectorInner>
