@@ -30,7 +30,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const StateSubmit = styled.button`
-  padding: 4px 8px;
+  padding: 4px 7px;
   margin: 5px 5px; 
   border-radius: 0px;
   font-size: 12px;
