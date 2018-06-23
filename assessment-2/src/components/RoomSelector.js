@@ -50,23 +50,63 @@ const ChildrenSelector = styled.div`
   box-sizing: border-box;
 `;
 
+const Checkbox = styled.input`
+  position: absolute;
+  opacity: 0;
+  
+`;
+
+const CheckBoxContainer = styled.label`
+    display: block;
+    position: relative;
+    padding-left: 19px;
+`;
+
+const Checkmark = styled.span`
+    position: absolute;
+    top: 4px;
+    left: 2px;
+    height: 11px;
+    width: 11px;
+    background-color: #FFFFFF;
+    box-shadow: inset .5px .5px 0px 0px #898989;
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 4px;
+      top: 1px;
+      width: 2px;
+      height: 5px;
+      border: solid black;
+      border-width: 0 1.5px 1.5px 0;
+      transform: rotate(45deg);
+      display: ${props => props.ability ? 'default' : 'block'}
+    }
+`;
+
 const RoomSelector = (props) => {
   const { handleChange, toggleAbility, roomState, ind } = props;
   let { ability, adults, children } = roomState;
-  let checkBox;
+  let header;
   if (ind) {
-    checkBox = <input type="checkbox" onClick={() => toggleAbility(ind)} checked={!ability} />;
+    header = (
+      <Header ability={ability}>
+        <CheckBoxContainer>Room {ind + 1}
+          <Checkbox type="checkbox" onClick={() => toggleAbility(ind)} checked={!ability} />
+          <Checkmark ability={ability}></Checkmark>
+        </CheckBoxContainer>
+      </Header>
+    );
   } else {
-    checkBox = null;
+    header = <Header ability={!ability}>Room {ind + 1}</Header>
     ability = !ability;
   }
+
   return (
     <div>
       <SelectorOuter ability={ability}>
-        <Header ability={ability}>
-          {checkBox}
-          Room {ind + 1}
-        </Header>
+          {header}
         <SelectorInner ability={ability}>
           <AdultsSelector>
             <SelectorHeading>
