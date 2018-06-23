@@ -9,7 +9,3 @@ export const handleChange = (ind, val, person) => ({
   type: types.HANDLE_CHANGE,
   payload: { ind, val, person },
 });
-
-export const persistState = () => ({
-  type: types.PERSIST_STATE,
-});
