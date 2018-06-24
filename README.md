@@ -36,7 +36,6 @@ are still in their default styles. I chose to not rework these as they take a co
   terms of appropriate tags for this section was a bit hard without the context of a wider 
   application. 
 
-
 Acknowledgments:
 
 Accessibility is admittedly not my strong point. If we move forward I'll happily deepen my 
