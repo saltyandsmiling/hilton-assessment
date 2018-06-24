@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import shortId from 'shortid';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import RoomSelector from '../components/RoomSelector';
 import * as Actions from '../actions/actions';
-import { saveState } from '../../loadState';
+import { saveState } from '../loadState';
 import store from '../store';
-import styled from 'styled-components';
 
 
 const mapStateToProps = store => ({

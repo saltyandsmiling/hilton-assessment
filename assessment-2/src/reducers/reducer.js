@@ -26,7 +26,6 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  let ind;
   const stateCopy = { ...state };
   const roomStateCopy = [];
   stateCopy.roomState.forEach((el) => {
@@ -35,8 +34,8 @@ const reducer = (state = initialState, action) => {
   stateCopy.roomState = roomStateCopy;
 
   switch (action.type) {
-    case types.TOGGLE_ROOM:
-      ind = action.payload;
+    case types.TOGGLE_ROOM: {
+      const ind = action.payload;
       const boolState = !roomStateCopy[ind].ability;
       if (!boolState) {
         for (let i = ind; i > 0; i -= 1) {
@@ -50,12 +49,13 @@ const reducer = (state = initialState, action) => {
         }
       }
       return stateCopy;
+    }
 
-    case types.HANDLE_CHANGE:
-      ind = action.payload.ind;
-      const { person, val } = action.payload;
+    case types.HANDLE_CHANGE: {
+      const { ind, person, val } = action.payload;
       roomStateCopy[ind][person] = val;
       return stateCopy;
+    }
 
     default:
       return state;

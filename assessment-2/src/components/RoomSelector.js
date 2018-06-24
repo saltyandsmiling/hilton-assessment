@@ -92,7 +92,7 @@ const CheckMark = styled.span`
 `;
 
 const RoomSelector = (props) => {
-  const { handleChange, toggleAbility, persistState, roomState, ind } = props;
+  const { handleChange, toggleAbility, roomState, ind } = props;
   const { adults, children } = roomState;
   let { ability } = roomState;
   let header;
