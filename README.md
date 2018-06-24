@@ -1,10 +1,11 @@
+Hi Hilton UI Team,
+
 Thank you for your time and your interest. Below you'll find some instructions for getting things
  working. 
  
  Acknowledgments:
  
- Accessibility is admittedly not my strong point especially in SPA's. This can be learned though 
- and I'll happily dive in. 
+ Accessibility is admittedly not my strong point especially in SPA's. I will happily build my expertise around this area and am hoping that some internal tools would be available to help in the development process. 
  
 Assessment 1:
  
