@@ -14,7 +14,6 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  // disables select drop down and alters css based on props
   toggleAbility: (ind) => {
     dispatch(Actions.toggleRoom(ind));
   },
