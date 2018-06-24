@@ -73,7 +73,7 @@ describe('TOGGLE_ROOM', () => {
     })).toEqual(initialStateTestDefault);
   });
 
-  it('should reset person defaults when room is disabled for selected room and all room instances after', () => {
+  it('should reset defaults when room is disabled for selected room and all room instances after', () => {
     expect(
       reducer({
         roomState: [
