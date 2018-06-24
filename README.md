@@ -33,7 +33,7 @@ are still in their default styles. I chose to not rework these as they take a co
  difficult. To persist state I've used local storage and am currently persisting the entire state
   of the application, in production I'd would only persist what was necessary. Accessibilty in 
   terms of appropriate tags for this section was a bit hard without the context of a wider 
-  application. <br />
+  application. <br /><br />
   
   Acknowledgments:
 
