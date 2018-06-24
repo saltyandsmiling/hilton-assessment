@@ -1,3 +1,5 @@
+
+// checks local storage for persisted state
 export const loadState = () => {
   try {
     const serializedState = localStorage.getItem('roomState');
@@ -10,6 +12,7 @@ export const loadState = () => {
   }
 };
 
+// saves app state via local storage api
 export const saveState = (state) => {
   try {
     const serializedState = JSON.stringify(state);

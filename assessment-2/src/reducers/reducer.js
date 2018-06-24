@@ -36,14 +36,15 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.TOGGLE_ROOM: {
       const ind = action.payload;
-      const boolState = !roomStateCopy[ind].ability;
-      if (!boolState) {
+      const bool = !roomStateCopy[ind].ability;
+      // toggles room instance state based on user selections
+      if (!bool) {
         for (let i = ind; i > 0; i -= 1) {
-          roomStateCopy[i].ability = boolState;
+          roomStateCopy[i].ability = bool;
         }
       } else {
         for (let i = ind; i < roomStateCopy.length; i += 1) {
-          roomStateCopy[i].ability = boolState;
+          roomStateCopy[i].ability = bool;
           roomStateCopy[i].adults = 1;
           roomStateCopy[i].children = 0;
         }

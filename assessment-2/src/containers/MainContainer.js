@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import shortId from 'shortid';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import RoomSelector from '../components/RoomSelector';
 import * as Actions from '../actions/actions';
 import { saveState } from '../loadState';
@@ -15,9 +14,11 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  // disables select drop down and alters css based on props
   toggleAbility: (ind) => {
     dispatch(Actions.toggleRoom(ind));
   },
+  // updates state based on user selection
   handleChange: (e) => {
     const val = parseInt(e.target.value, 10);
     const personAndInd = e.target.id.split(' ');
@@ -25,6 +26,7 @@ const mapDispatchToProps = dispatch => ({
     const ind = personAndInd[1];
     dispatch(Actions.handleChange(ind, val, person));
   },
+  // saves app state via local storage api
   persistState: () => {
     saveState(store.getState());
   },
