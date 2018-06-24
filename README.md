@@ -22,7 +22,7 @@ Assessment 1:
 
 Assessment 2:
 
-To get this going run "npm install" and "npm start" and project will run on localhost:8080, please 
+To get this going run "npm install" and "npm start" in the assessment-2 directory and project will run on localhost:8080, please 
 view in Chrome. Testing 
 added with "npm test" inside the assessment-2 directory. Testing has 
 been added but is not comprehensive by any means. Most of the business logic within the reducers 
