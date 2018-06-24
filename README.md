@@ -23,9 +23,8 @@ To get this going run npm install and start the dev server with npm start.
 This project will run on localhost:8080. As requested I built this with React, styled-components 
 and chose Redux as my state management system. This project is also not cross browser compatible 
 at the moment so please view it in Chrome. For ease of viewing and evaluation I used an easy to 
-navigate folder structure and kept the components mostly kept together only separating 
-the container HOC and the presentational component. Depending on reuse needs I would consider 
-pulling things out like the checkbox for reuse elsewhere. You'll notice that the <select> menus 
+navigate folder structure and mostly kept the components together. Depending on reuse 
+needs I would consider pulling things out like the checkbox for reuse elsewhere. You'll notice that the <select> menus 
 are still in their default styles. I chose to not rework these as they take a considerable amount
  of time and effort and are difficult to make accessible to users using their keyboards. 
  I've assumed that Hilton would have internal libraries with styling and accessibility for these 
@@ -34,9 +33,9 @@ are still in their default styles. I chose to not rework these as they take a co
  difficult. To persist state I've used local storage and am currently persisting the entire state
   of the application, in production I'd would only persist what was necessary. Accessibilty in 
   terms of appropriate tags for this section was a bit hard without the context of a wider 
-  application. 
-
-Acknowledgments:
+  application. <br />
+  
+  Acknowledgments:
 
 Accessibility is admittedly not my strong point. If we move forward I'll happily deepen my 
 understanding in order to make sure that your site meets your accessibility standards. 

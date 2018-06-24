@@ -7,6 +7,7 @@ import RoomSelector from '../components/RoomSelector';
 import * as Actions from '../actions/actions';
 import { saveState } from '../loadState';
 import store from '../store';
+import SubmitButton from '../components/submitButton';
 
 
 const mapStateToProps = store => ({
@@ -29,23 +30,11 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const StateSubmit = styled.button`
-  padding: 4px 7px;
-  margin: 5px 5px; 
-  border-radius: 0px;
-  font-size: 12px;
-  background-color: #C0C0C0;
-  box-sizing: border-box;
-  border-bottom: solid 2px #666666;
-  border-right: solid 2px #666666;
-`;
-
 class MainContainer extends Component {
   render() {
     const { roomState, toggleAbility, handleChange, persistState } = this.props;
     const rooms = roomState.map((roomState, ind) => (
       <RoomSelector
-        persistState={persistState}
         handleChange={handleChange}
         toggleAbility={toggleAbility}
         roomState={roomState}
@@ -58,7 +47,7 @@ class MainContainer extends Component {
         {rooms}
         <div>
           <br style={{ lineHeight: 6 }} />
-          <StateSubmit onClick={persistState}>Submit</StateSubmit>
+          <SubmitButton persistState={persistState} />
         </div>
       </div>
     );
